@@ -1,0 +1,146 @@
+import React from "react";
+import data from "../json/footer.json";
+
+const Footer = () => {
+  const details = data.footer_details;
+  const colors = details.colors; // 🎨 new colors object
+
+  return (
+    <footer
+      className={`w-full`}
+      style={{ backgroundColor: colors.background, color: colors.text }}
+    >
+      <div className="flex flex-col items-center justify-center max-h-fit xl:max-w-full w-full pt-8">
+        <div className="flex gap-5 px-3 xl:gap-28 lg:gap-12 flex-col md:flex-row md:gap-5 justify-center mt-8 md:mt-14 xl:px-0 md:px-7 max-w-xl md:max-w-7xl">
+          {/* Logo Section */}
+          <div className="flex flex-col gap-4 lg:gap-6 md:gap-4">
+            <div className="flex items-center space-x-3 -ml-2">
+              <span className="text-xl md:text-2xl lg:text-3xl font-bold">
+                {details.title}
+              </span>
+            </div>
+            <div
+              className="max-w-[280px] text-sm md:text-base leading-6 tracking-[0.02em] font-normal"
+              style={{ color: colors.subtext }}
+            >
+              {details.simple_desc}
+            </div>
+            <div className="flex gap-4 max-w-[200px]">
+              {details.socials.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={item.icon}
+                    alt="social"
+                    className="w-6 h-6 hover:opacity-75 cursor-pointer"
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Links Section */}
+          <div className="flex flex-col md:gap-4 gap-2">
+            <h3
+              className="text-lg md:text-xl font-semibold"
+              style={{ color: colors.highlight }}
+            >
+              Quick Links
+            </h3>
+            {details.site_quick_links.map((item, index) => (
+              <a
+                key={index}
+                href={item.href}
+                className="text-sm md:text-base transition-colors"
+                style={{ color: colors.text }}
+                onMouseOver={(e) => (e.target.style.color = colors.highlight)}
+                onMouseOut={(e) => (e.target.style.color = colors.text)}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+
+          {/* Additional Info / Services */}
+          <div className="flex flex-col md:gap-4 gap-2">
+            <h3
+              className="text-lg md:text-xl font-semibold"
+              style={{ color: colors.highlight }}
+            >
+              {details.add_info.title}
+            </h3>
+            <div className="grid grid-cols-2 gap-2 md:gap-3">
+              {details.add_info.links.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.href}
+                  className="text-sm md:text-base transition-colors"
+                  style={{ color: colors.text }}
+                  onMouseOver={(e) => (e.target.style.color = colors.highlight)}
+                  onMouseOut={(e) => (e.target.style.color = colors.text)}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Contact Section */}
+          <div className="flex flex-col md:gap-4 gap-2">
+            <h3
+              className="text-lg md:text-xl font-semibold"
+              style={{ color: colors.highlight }}
+            >
+              Contact Us
+            </h3>
+            <p className="text-sm md:text-base">
+              {details.contacts.location_street}
+              <br />
+              {details.contacts.location_state}
+            </p>
+            <p className="text-sm md:text-base mt-2">
+              Phone: {details.contacts.phone}
+              <br />
+              Email: {details.contacts.email}
+            </p>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div
+          className="w-full mt-8 pt-4 mb-5 border-t"
+          style={{ borderColor: colors.border }}
+        >
+          <div
+            className="flex flex-col md:flex-row justify-between items-center px-5 max-w-7xl mx-auto text-sm"
+            style={{ color: colors.muted }}
+          >
+            <div className="mb-2 md:mb-0">
+              {details.copyright.statement} {details.copyright.year}
+            </div>
+            <div className="flex space-x-4">
+              {details.policies.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.href}
+                  className="transition-colors"
+                  style={{ color: colors.text }}
+                  onMouseOver={(e) => (e.target.style.color = colors.highlight)}
+                  onMouseOut={(e) => (e.target.style.color = colors.text)}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

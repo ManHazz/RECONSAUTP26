@@ -1,0 +1,51 @@
+{
+  "footer_details": {
+    "logo": "/images/futuretech-logo.png",
+    "logo_alt": "Reconsa Logo",
+    "logo_link": "/",
+    "title": "RECONSA UTP 2026",
+    "simple_desc": "Cultivating Sustainable Volunteerism: The Evolution of Youth Activism",
+    "colors": {
+      "background": "#000D13",
+      "text": "#FFFFFF",
+      "subtext": "#F2F2F2",
+      "highlight": "#c4c1ff",
+      "border": "#2D3748",
+      "muted": "#A0AEC0"
+    },
+    "socials": [
+      {
+        "icon": "/icons/instagram-icon/icons8-instagram-48.svg",
+        "link": "https://www.instagram.com/reconsa_utp/"
+      },
+      {
+        "icon": "/icons/linktree-icon/icons8-linktree-96.png",
+        "link": "https://linktr.ee/reconsa25?fbclid=PAZXh0bgNhZW0CMTEAAafNuW5vUWF1MbwQ-F2cxPEWoPERt0NDoKgoAe_wOWN04LvwnNV_RFcvifglbA_aem_R3Ep0Dl1Mz1u5jtDAlxTOQ"
+      }
+    ],
+    "site_quick_links": [
+      { "label": "Home", "href": "/" },
+      { "label": "Agenda", "href": "/agenda" },
+      { "label": "Key Events", "href": "/key-events" },
+      { "label": "Past Editions", "href": "/past-editions" }
+    ],
+    "add_info": {
+      "title": "",
+      "links": [{ "label": "", "href": "" }]
+    },
+    "contacts": {
+      "location_street": "Universiti Teknologi Petronas",
+      "location_state": "Perak, Malaysia",
+      "phone": "+60 123 456 789",
+      "email": "reconsaofficial@gmail.com"
+    },
+    "copyright": {
+      "statement": "© RECONSAUTP All rights reserved.",
+      "year": "2025"
+    },
+    "policies": [
+      { "label": "Terms of Service", "href": "#terms" },
+      { "label": "Privacy Policy", "href": "#privacy" }
+    ]
+  }
+}

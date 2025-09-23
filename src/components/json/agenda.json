@@ -1,0 +1,35 @@
+{
+  "Day 1": [
+    {
+      "time": "09:00 AM",
+      "label": { "color": "bg-blue-500", "title": "Opening" },
+      "title": "Opening Ceremony",
+      "location": "Main Hall",
+      "description": "Kickoff with keynote and welcome remarks.",
+      "speaker": {
+        "name": "Dr. Aiman",
+        "photo": "/ChancellorHall.png"
+      }
+    },
+    {
+      "time": "11:00 AM",
+      "label": { "color": "bg-green-500", "title": "Speech" },
+      "title": "Tech Talk",
+      "location": "Room 101",
+      "description": "Discussion on AI in Healthcare.",
+      "speaker": {
+        "name": "Prof. Sarah",
+        "photo": "/speakers/sarah.jpg"
+      }
+    }
+  ],
+  "Day 2": [
+    {
+      "time": "10:00 AM",
+      "label": { "color": "bg-red-500", "title": "Workshop" },
+      "title": "React Basics",
+      "location": "Lab A",
+      "description": "Hands-on React session for beginners."
+    }
+  ]
+}
