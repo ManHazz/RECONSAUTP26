@@ -1,33 +1,96 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import data from "../json/speakers.json";
 
-function SpeakerCard({ name, role, img }) {
+function SpeakerCard({ name, role, img, bio, expertise }) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
   return (
-    <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-3 sm:p-6 text-center hover:scale-105 transition-transform max-w-xs sm:max-w-sm mx-auto w-full">
-      <div className="w-full aspect-square overflow-hidden rounded-xl mb-3 sm:mb-4">
-        <img src={img} alt={name} className="w-full h-full object-cover" />
-      </div>
-      <h3 className="text-base sm:text-xl font-semibold">{name}</h3>
-      <p className="text-xs sm:text-sm text-indigo-200">{role}</p>
+    <div
+      className="relative max-w-xs sm:max-w-sm mx-auto w-full cursor-pointer"
+      style={{ perspective: "1000px", aspectRatio: "3/4" }}
+      onClick={() => setIsFlipped(!isFlipped)}
+    >
+      <motion.div
+        className="relative w-full h-full"
+        style={{ transformStyle: "preserve-3d" }}
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+      >
+        {/* Front of Card */}
+        <div
+          className="absolute inset-0 bg-white/10 backdrop-blur-xl rounded-2xl items-center p-3 sm:p-6 
+                    text-center hover:scale-105 transition-transform 
+                    flex flex-col"
+          style={{ backfaceVisibility: "hidden" }}
+        >
+          <div className="w-full aspect-square overflow-hidden rounded-xl mb-3 sm:mb-4">
+            <img src={img} alt={name} className="w-full h-full object-cover" />
+          </div>
+          <div className="flex-1 flex flex-col justify-between">
+            <h3 className="text-base sm:text-xl font-semibold">{name}</h3>
+            <p className="text-xs sm:text-sm text-indigo-200">{role}</p>
+          </div>
+        </div>
+
+        {/* Back of Card */}
+        <div
+          className="absolute inset-0 bg-white/10 backdrop-blur-xl rounded-2xl p-3 sm:p-6 
+                    flex flex-col overflow-y-auto"
+          style={{
+            backfaceVisibility: "hidden",
+            transform: "rotateY(180deg)",
+          }}
+        >
+          <h3 className="text-base sm:text-xl font-semibold mb-2">{name}</h3>
+          <p className="text-xs sm:text-sm text-indigo-200 mb-3 sm:mb-4">
+            {role}
+          </p>
+
+          {bio && (
+            <div className="mb-3 sm:mb-4">
+              <h4 className="text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-indigo-100">
+                About
+              </h4>
+              <p className="text-xs sm:text-sm text-indigo-200 leading-relaxed">
+                {bio}
+              </p>
+            </div>
+          )}
+
+          {expertise && expertise.length > 0 && (
+            <div>
+              <h4 className="text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-indigo-100">
+                Expertise
+              </h4>
+              <div className="flex flex-wrap gap-1 sm:gap-2">
+                {expertise.map((skill, i) => (
+                  <span
+                    key={i}
+                    className="bg-indigo-500/30 px-2 py-1 rounded-full text-xs"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <p className="text-xs text-indigo-300 mt-auto pt-3">
+            Click to flip back
+          </p>
+        </div>
+      </motion.div>
     </div>
   );
 }
 
 export default function Speakers() {
-  const allSpeakers = [
-    { name: "Dr. Elise Tan", role: "Keynote Speaker", img: "/elise.jpg" },
-    { name: "Markus Lee", role: "Tech Visionary", img: "/markus.jpg" },
-    { name: "Sophia Grant", role: "AI Innovator", img: "/sophia.jpg" },
-    { name: "Liam Wong", role: "Creative Futurist", img: "/liam.jpg" },
-    { name: "Aisha Rahman", role: "Cybersecurity Expert", img: "/aisha.jpg" },
-    { name: "Carlos Vega", role: "Data Scientist", img: "/carlos.jpg" },
-    { name: "Maya Chen", role: "Cloud Specialist", img: "/maya.jpg" },
-    { name: "David Noor", role: "Blockchain Pioneer", img: "/david.jpg" },
-  ];
-
   const [visibleCount, setVisibleCount] = useState(6);
   const [start, setStart] = useState(0);
+
+  const allSpeakers = data;
 
   useEffect(() => {
     const updateCount = () => {
@@ -55,7 +118,7 @@ export default function Speakers() {
         {start > 0 && (
           <button
             onClick={handlePrev}
-            className="absolute -left-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 p-2 sm:p-3 rounded-full z-10"
+            className="absolute -left-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 p-2 sm:p-3 rounded-full cursor-pointer z-10"
           >
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
@@ -64,7 +127,7 @@ export default function Speakers() {
         {start < allSpeakers.length - visibleCount && (
           <button
             onClick={handleNext}
-            className="absolute -right-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 p-2 sm:p-3 rounded-full z-10"
+            className="absolute -right-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 p-2 sm:p-3 rounded-full z-10 cursor-pointer"
           >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>

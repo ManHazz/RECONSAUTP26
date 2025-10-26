@@ -19,7 +19,7 @@ const App = () => {
 
   const location = useLocation();
 
-  // Map section ids to refs
+  // map section ids to refs
   const sectionRefs = {
     "#home": homeRef,
     "#about": aboutRef,
@@ -28,7 +28,7 @@ const App = () => {
     "#booklet": bookletRef,
   };
 
-  // Scroll handler
+  // autoscroll handler
   const handleScrollTo = (id) => {
     const ref = sectionRefs[id];
     if (ref && ref.current) {

@@ -1,4 +1,4 @@
-import CompanyCarousel from "../blocks/CompanyCarousel";
+import CompanyCarousel from "../blocks/LogoCarousel";
 import CustomButton from "../blocks/CustomButton";
 
 export default function Booklet() {

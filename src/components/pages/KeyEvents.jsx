@@ -106,25 +106,25 @@ const KeyEvents = () => {
             {sections.map((section) => (
               <div
                 key={section.id}
-                className="h-screen flex flex-col md:flex-row items-center md:items-center justify-around px-6 md:px-24 gap-6 md:gap-20"
+                className="min-h-[80vh] md:h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-24 gap-6 md:gap-20"
               >
                 {/* Image: right side on desktop, top on mobile */}
                 <div className="w-full md:w-[40vw] flex items-center justify-center mb-6 md:mb-0 md:order-2">
-                  <div className="w-[80vw] h-[40vw] max-w-xs max-h-[300px] md:w-[32vw] md:h-[48vh] md:max-w-[500px] md:max-h-[400px] flex items-center justify-center">
+                  <div className="w-[80vw] h-auto max-w-xs md:w-[32vw] md:h-[48vh] md:max-w-[500px] md:max-h-[400px] flex items-center justify-center">
                     <img
                       src={section.image}
                       alt={section.title}
                       className="w-full h-full object-cover rounded-2xl shadow-xl"
-                      style={{ maxHeight: "100%", maxWidth: "100%" }}
                     />
                   </div>
                 </div>
+
                 {/* Text: left side on desktop, below image on mobile */}
                 <div className="max-w-xl space-y-4 flex-1 text-center md:text-left md:flex md:flex-col md:justify-center md:items-start">
                   <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-2 md:mb-4">
                     {section.title}
                   </h2>
-                  <p className="text-base sm:text-lg md:text-lg lg:text-xl text-justify md:text-left leading-relaxed text-white/80 md:max-w-md">
+                  <p className="text-base sm:text-lg md:text-lg lg:text-xl text-center md:text-left leading-relaxed text-white/80 md:max-w-md">
                     {section.description}
                   </p>
                 </div>

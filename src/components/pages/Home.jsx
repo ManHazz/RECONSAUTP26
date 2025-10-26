@@ -51,11 +51,11 @@ export default function Hero() {
         <div className="mt-10 flex flex-wrap gap-6 justify-center text-sm text-indigo-200">
           <div className="flex items-center gap-2">
             <Calendar className="w-5 h-5 text-indigo-400" />
-            <span>12 - 14 December 2025</span>
+            <span>5 - 10 June 2026</span>
           </div>
           <div className="flex items-center gap-2">
             <MapPin className="w-5 h-5 text-pink-400" />
-            <span>Kuala Lumpur, Malaysia</span>
+            <span>Universiti Teknologi Petronas, Perak</span>
           </div>
         </div>
       </div>

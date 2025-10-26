@@ -26,7 +26,7 @@
   {
     "id": 5,
     "name": "WORKSHOP AND ROUNDTABLE DISCUSSION",
-    "description": "Series of workshop to equip participants with skills that prepare them for the paper presentation.",
+    "description": "To introduce the conference's theme, set the tone (outlining the main message or theme) for the event, and inspire and engage the audience (sparking their interest and encouraging active participation in the conference activities).",
     "image": "/groupPhoto.jpg"
   },
   {
@@ -43,7 +43,7 @@
   },
   {
     "id": 8,
-    "name": "GRAND PRESENTATION",
+    "name": "GRANT PRESENTATION",
     "description": "A special pitching session between selected delegates and NGOs or funding agency for sponsorship or securing grant.",
     "image": "/groupPhoto.jpg"
   },

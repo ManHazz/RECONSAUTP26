@@ -1,26 +1,26 @@
 [
   {
-    "alt": "company 1",
-    "src": "/company1.png"
+    "alt": "example",
+    "src": "/partners/partner_example.png"
   },
   {
-    "alt": "company 2",
-    "src": "/company2.png"
+    "alt": "<-- not good photo",
+    "src": "/"
   },
   {
-    "alt": "company 3",
-    "src": "/company3.png"
+    "alt": "github 2",
+    "src": "/partners/github logo 2.png"
   },
   {
-    "alt": "company 4",
+    "alt": "<-- good photo",
     "src": "/company4.png"
   },
   {
-    "alt": "company 5",
-    "src": "/company5.png"
+    "alt": "github non transparent",
+    "src": "/partners/github logo.jpg"
   },
   {
-    "alt": "company 6",
+    "alt": "<-- not good, scam bg",
     "src": "/company6.png"
   },
   {

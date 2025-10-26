@@ -26,14 +26,20 @@ const PastEdPage = () => {
         {/* Dome Background */}
         <DomeGallery
           fit={1}
-          grayscale={true}
+          grayscale={false}
           padFactor={5}
           segments={30}
           minRadius={750}
         />
       </div>
 
-      <div className="bg-[#060010] w-full h-screen"></div>
+      <div className="bg-[#060010] w-full h-screen flex items-center justify-center">
+        <video
+          src="/videos/Reconsa 25 Montage Final.mp4"
+          controls
+          className="w-full h-full object-contain rounded-xl shadow-lg"
+        />
+      </div>
       <Footer />
     </div>
   );
