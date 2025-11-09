@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data_source from "../json/events.json";
+import txt_colour from "../json/colour.json";
 import ShinyText from "../ShinyText";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -71,8 +72,11 @@ const KeyEvents = () => {
     <section>
       <div
         ref={containerRef}
-        className="relative text-white"
-        style={{ minHeight: `${sections.length * 100}vh` }}
+        className="relative"
+        style={{
+          minHeight: `${sections.length * 100}vh`,
+          color: txt_colour.keyevents.title,
+        }}
       >
         {/* Title Row */}
         <div className="w-full flex justify-center pt-20 pb-15 md:pb-0">
@@ -81,6 +85,7 @@ const KeyEvents = () => {
             disabled={false}
             speed={2.5}
             className="font-Poppins font-extrabold tracking-tight text-4xl sm:text-5xl md:text-7xl leading-tight text-center "
+            color={txt_colour.keyevents.head}
           />
         </div>
 
@@ -124,7 +129,10 @@ const KeyEvents = () => {
                   <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-2 md:mb-4">
                     {section.title}
                   </h2>
-                  <p className="text-base sm:text-lg md:text-lg lg:text-xl text-center md:text-left leading-relaxed text-white/80 md:max-w-md">
+                  <p
+                    className="text-base sm:text-lg md:text-lg lg:text-xl text-center md:text-left leading-relaxed md:max-w-md"
+                    style={{ color: txt_colour.keyevents.desc }}
+                  >
                     {section.description}
                   </p>
                 </div>

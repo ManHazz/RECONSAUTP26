@@ -1,24 +1,43 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { MapPin } from "lucide-react";
+import textColours from "../json/colour.json"; // <-- new import
 
 export default function Agenda({ data }) {
   const days = Object.keys(data);
 
+  // read colours for agenda from json, provide sensible fallbacks
+  const cfg = textColours?.agenda || {};
+  const tabsBg = cfg.tabsBg ?? "rgba(246,246,246,0.8)";
+  const tabsText = cfg.tabsText ?? "#000000";
+  const cardBg = cfg.cardBg ?? "#9eabffbe";
+  const titleColor = cfg.title ?? "#111827";
+  const descColor = cfg.desc ?? "#374151";
+
   return (
-    <section className="w-full px-10 py-20 pt-[15vh]">
-      <Tabs defaultValue={days[0]} className="w-full">
-        <TabsList className="flex justify-center flex-wrap gap-2 mb-6 bg-[#f6f6f6cc]">
+    // make this wrapper explicitly above the bg image
+    <section className="w-full px-10 py-20 pt-[15vh] relative z-20">
+      <Tabs defaultValue={days[0]} className="w-full relative z-20">
+        {/* Tabs list uses background/text from JSON */}
+        <TabsList
+          className="flex justify-center flex-wrap gap-2 mb-6 z-30 relative"
+          style={{ backgroundColor: tabsBg }}
+        >
           {days.map((day) => (
-            <TabsTrigger key={day} value={day}>
+            <TabsTrigger
+              key={day}
+              value={day}
+              // dynamic text colour via inline style so Tailwind doesn't need to generate it
+              style={{ color: tabsText }}
+            >
               {day}
             </TabsTrigger>
           ))}
         </TabsList>
 
-        <div>
+        <div className="relative z-20">
           {days.map((day) => (
-            <TabsContent key={day} value={day}>
+            <TabsContent key={day} value={day} className="relative z-20">
               <AnimatePresence mode="wait">
                 <motion.div
                   initial={{ opacity: 0, y: 15 }}
@@ -30,13 +49,20 @@ export default function Agenda({ data }) {
                   {data[day].slice(0, 50).map((event, i) => (
                     <div
                       key={i}
-                      className="relative flex flex-row border p-4 rounded-xl shadow-sm bg-[#9eabffbe] overflow-hidden items-center"
+                      className="relative flex flex-row border p-4 rounded-xl shadow-sm overflow-hidden items-center"
+                      // dynamic card background color from json
+                      style={{ background: cardBg }}
                     >
                       {/* Left: Details */}
                       <div className="flex-1 flex flex-col">
                         {/* Top Row: Time + Label */}
                         <div className="flex items-center gap-3 mb-2">
-                          <span className="font-semibold">{event.time}</span>
+                          <span
+                            className="font-semibold"
+                            style={{ color: titleColor }}
+                          >
+                            {event.time}
+                          </span>
                           <div className="flex items-center gap-2">
                             <span
                               className={`flex items-center justify-center px-3 h-7 min-w-[48px] rounded-full ${event.label.color} text-xs font-semibold text-white`}
@@ -47,11 +73,19 @@ export default function Agenda({ data }) {
                           </div>
                         </div>
                         {/* Details Below */}
-                        <h3 className="text-lg font-bold">{event.title}</h3>
-                        <p className="flex items-center text-sm text-gray-600">
+                        <h3
+                          className="text-lg font-bold"
+                          style={{ color: titleColor }}
+                        >
+                          {event.title}
+                        </h3>
+                        <p
+                          className="flex items-center text-sm"
+                          style={{ color: descColor }}
+                        >
                           <MapPin className="w-4 h-4 mr-1" /> {event.location}
                         </p>
-                        <p className="text-gray-700 mt-2">
+                        <p className="mt-2" style={{ color: descColor }}>
                           {event.description}
                         </p>
                       </div>

@@ -1,10 +1,18 @@
 import Footer from "../blocks/footer";
 import KeyEvents from "./KeyEvents";
 import Navbar from "../blocks/header";
+import bgData from "../json/bg.json";
 
 const EventsPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-950 via-indigo-900 to-indigo-800">
+    <div className="min-h-screen bg-white">
+      <div className="absolute inset-0 z-0">
+        <img
+          src={bgData.keyevents_bg}
+          alt="reconsautp26 background"
+          className="w-full h-full object-cover"
+        />
+      </div>
       <Navbar />
       <KeyEvents />
       <Footer />

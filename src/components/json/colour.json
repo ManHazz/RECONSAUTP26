@@ -1,0 +1,27 @@
+{
+  "hero": {
+    "title": "#FFFFFF",
+    "desc": "rgba(255,255,255,0.9)"
+  },
+  "banner": {
+    "bg": "#FF0000",
+    "chevron": "#FFFFFF",
+    "title": "#FFFFFF"
+  },
+  "abouts": {
+    "title": "#EDE9FE",
+    "desc": "#CBD5E1"
+  },
+  "agenda": {
+    "tabsBg": "rgba(246,246,246,0.9)",
+    "tabsText": "#0f172a",
+    "cardBg": "#FFFFFFCC",
+    "title": "#111827",
+    "desc": "#374151"
+  },
+  "keyevents": {
+    "head": "#b5b5b5a4",
+    "title": "#FFFFFF",
+    "desc": "#FFFFFFCC"
+  }
+}

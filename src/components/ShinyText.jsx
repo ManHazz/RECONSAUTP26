@@ -1,16 +1,46 @@
-const ShinyText = ({ text, disabled = false, speed = 5, className = '' }) => {
+import React from "react";
+
+const ShinyText = ({
+  text,
+  color = "#FFFFFF",
+  disabled = false,
+  speed = 5,
+  className = "",
+}) => {
   const animationDuration = `${speed}s`;
 
+  // Build a gradient that uses the provided color as base and a bright center highlight
+  const gradient = `linear-gradient(
+    120deg,
+    ${color} 0%,
+    ${color} 40%,
+    rgba(255,255,255,0.9) 50%,
+    ${color} 60%,
+    ${color} 100%
+  )`;
+
+  if (disabled) {
+    // simple colored text when disabled
+    return (
+      <div className={`inline-block ${className}`} style={{ color }}>
+        {text}
+      </div>
+    );
+  }
+
+  // shining version: text is transparent so background shows through
   return (
     <div
-      className={`text-[#b5b5b5a4] bg-clip-text inline-block ${disabled ? '' : 'animate-shine'} ${className}`}
+      className={`bg-clip-text inline-block animate-shine ${className}`}
       style={{
-        backgroundImage:
-          'linear-gradient(120deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 60%)',
-        backgroundSize: '200% 100%',
-        WebkitBackgroundClip: 'text',
-        animationDuration: animationDuration
-      }}>
+        backgroundImage: gradient,
+        backgroundSize: "200% 100%",
+        WebkitBackgroundClip: "text",
+        backgroundClip: "text",
+        color: "transparent",
+        animationDuration,
+      }}
+    >
       {text}
     </div>
   );

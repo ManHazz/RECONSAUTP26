@@ -2,21 +2,23 @@ import { motion } from "framer-motion";
 import { Calendar, MapPin } from "lucide-react";
 import Dither from "../Dither";
 import CustomButton from "../blocks/CustomButton";
+import data from "../json/landing.json";
+import bgData from "../json/bg.json";
+import colours from "../json/colour.json"; // <-- added import
 
 export default function Hero() {
+  const cfg = colours?.hero || {};
+  const titleColor = cfg.title ?? ""; // empty fallback uses default CSS
+  const descColor = cfg.desc ?? "rgba(255,255,255,0.9)";
+
   return (
-    <section className="relative flex flex-col items-center justify-center text-center px-6 h-screen bg-indigo-900 overflow-hidden">
-      {/* Dither Background */}
-      <div className="absolute inset-0 z-0 mix-blend-multiply">
-        <Dither
-          waveColor={[0.5, 0.5, 0.5]}
-          disableAnimation={false}
-          enableMouseInteraction={false}
-          mouseRadius={0.15}
-          colorNum={4}
-          waveAmplitude={0.3}
-          waveFrequency={3}
-          waveSpeed={0.05}
+    <section className="relative flex flex-col items-center justify-center text-center px-6 h-screen overflow-hidden">
+      {/* Dither Background : changed to normal img from json*/}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={bgData.hero_bg}
+          alt="reconsautp26 bg"
+          className="w-full h-full object-cover"
         />
       </div>
 
@@ -27,8 +29,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          style={titleColor ? { color: titleColor } : {}}
         >
-          RECONSA UTP 2026
+          {data.title}
         </motion.h1>
 
         <motion.p
@@ -36,8 +39,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
+          style={{ color: descColor }}
         >
-          Cultivating Sustainable Volunteerism: The Evolution of Youth Activism
+          {data.desc}
         </motion.p>
 
         <div className="mt-8 flex flex-wrap gap-4 justify-center">
@@ -51,11 +55,11 @@ export default function Hero() {
         <div className="mt-10 flex flex-wrap gap-6 justify-center text-sm text-indigo-200">
           <div className="flex items-center gap-2">
             <Calendar className="w-5 h-5 text-indigo-400" />
-            <span>5 - 10 June 2026</span>
+            <span>{data.date}</span>
           </div>
           <div className="flex items-center gap-2">
             <MapPin className="w-5 h-5 text-pink-400" />
-            <span>Universiti Teknologi Petronas, Perak</span>
+            <span>{data.venue}</span>
           </div>
         </div>
       </div>
