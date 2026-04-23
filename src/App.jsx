@@ -9,7 +9,7 @@ import Home from "./components/pages/Home";
 import About from "./components/pages/Abouts";
 import CompanyBanner from "./components/pages/CompanyBanner";
 import "./index.css";
-import SubThemes from "./components/pages/subTheme";
+import SubThemes from "./components/pages/SubTheme";
 
 const App = () => {
   const homeRef = useRef(null);
