@@ -18,10 +18,8 @@ export default function Navbar({ onScrollTo }) {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Hide if scrolling down and past the first 100px, otherwise show
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsVisible(false);
-        // Close mobile menu/dropdowns when nav retracts
         setIsOpen(false);
         setHomeDropdown(false);
       } else {
@@ -37,11 +35,23 @@ export default function Navbar({ onScrollTo }) {
 
   const scrollToSection = (id) => {
     if (location.pathname === "/") {
-      // Already on home → smooth scroll
       onScrollTo(id);
     } else {
-      // Navigate home and tell App which section to scroll
       navigate("/", { state: { scrollTo: id } });
+    }
+    setIsOpen(false);
+    setHomeDropdown(false);
+  };
+
+  // NEW: Dedicated handler for the Logo
+  const handleLogoClick = (e) => {
+    e.preventDefault(); // Prevents standard <a> tag reload
+    if (location.pathname === "/") {
+      // If already on home, just scroll smoothly to the very top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // If on another page, navigate cleanly to the home page
+      navigate("/");
     }
     setIsOpen(false);
     setHomeDropdown(false);
@@ -69,9 +79,14 @@ export default function Navbar({ onScrollTo }) {
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        {/* 1. LEFT: Logo (Takes up equal space to the right block to keep center perfectly centered) */}
+        {/* 1. LEFT: Logo */}
         <div className="flex-1 flex justify-start">
-          <a href="#home" className="flex items-center">
+          {/* UPDATED: Removed link.href and added handleLogoClick */}
+          <a
+            href="/"
+            onClick={handleLogoClick}
+            className="flex items-center cursor-pointer"
+          >
             <img
               src={logo}
               alt="RECONSA Logo"
@@ -110,26 +125,24 @@ export default function Navbar({ onScrollTo }) {
                 </div>
               </div>
             ) : (
-              <a
+              <button
                 key={link.name}
-                href={link.href}
+                onClick={() => navigate(link.href)}
                 className="hover:text-[#5a38d4] transition-colors"
               >
                 {link.name}
-              </a>
+              </button>
             ),
           )}
         </div>
 
         {/* 3. RIGHT: Contact Us Button & Mobile Toggle */}
         <div className="flex-1 flex justify-end items-center gap-4">
-          {/* Desktop Contact Us Button */}
           <button className="hidden md:flex items-center gap-2 px-6 py-2 bg-black text-white rounded-full font-bold hover:bg-[#5a38d4] hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
             <Phone className="w-4 h-4" />
             Contact Us
           </button>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 rounded-lg hover:bg-black/10 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
@@ -139,7 +152,7 @@ export default function Navbar({ onScrollTo }) {
         </div>
       </div>
 
-      {/* Mobile Dropdown (Visible only on mobile when hamburger is clicked) */}
+      {/* Mobile Dropdown */}
       {isOpen && (
         <div className="md:hidden bg-[#ffffffcc] text-black backdrop-blur-md px-6 py-6 space-y-6 shadow-xl border-t border-gray-200 font-bold">
           {navLinks.map((link) =>
@@ -173,7 +186,10 @@ export default function Navbar({ onScrollTo }) {
             ) : (
               <button
                 key={link.name}
-                onClick={() => navigate(link.href)}
+                onClick={() => {
+                  navigate(link.href);
+                  setIsOpen(false);
+                }}
                 className="block w-full text-left hover:text-[#5a38d4] transition-colors text-lg"
               >
                 {link.name}
@@ -181,7 +197,6 @@ export default function Navbar({ onScrollTo }) {
             ),
           )}
 
-          {/* Mobile Contact Us Button */}
           <div className="pt-4 mt-4 border-t border-gray-300">
             <button className="w-full flex justify-center items-center gap-2 py-3 bg-black text-white rounded-lg font-bold hover:bg-[#5a38d4] transition-colors text-lg">
               <Phone className="w-5 h-5" />
