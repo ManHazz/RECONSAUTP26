@@ -1,56 +1,74 @@
 [
   {
     "id": 1,
-    "name": "KEYNOTE SPEECH",
-    "description": "To introduce the conference's theme, set the tone (outlining the main message or theme) for the event, and inspire and engage the audience (sparking their interest and encouraging active participation in the conference activities).",
-    "image": "/groupPhoto.jpg"
+    "name": "PITCHING SEMINAR",
+    "description": "Expert-led pitching seminar to refine participants' project presentations",
+    "image": "/images/pitching_seminar.jpg"
   },
   {
     "id": 2,
-    "name": "PARALLEL TALK",
-    "description": "Also known as parallel sessions, refers to multiple presentations or discussions happening simultaneously in different rooms or venues. This format allows attendees to choose sessions that align with their specific interests and attend multiple sessions throughout the day.",
-    "image": "/ipoh.JPG"
+    "name": "ROUNDTABLE DISCUSSION",
+    "description": "Case-based practice using recent internal issues by sharing different perspectives",
+    "image": "/images/roundtable.jpg"
   },
   {
     "id": 3,
-    "name": "PLANERY SESSION",
-    "description": "A meeting where all attendees are present, typically used for keynotes, general discussions, and important announcements. It's a format that brings everyone together to share information, make decisions, and foster a sense of community.",
-    "image": "/groupPhoto.jpg"
+    "name": "PARALLEL TALK: EXPERT SHARING SESSION",
+    "description": "Expert sharing sessions across themed breakout rooms",
+    "image": "/images/parallel_talk.jpg"
   },
   {
     "id": 4,
-    "name": "LEADERSHIP DIALOGUE",
-    "description": "A conference setting is a facilitated discussion focused on exploring leadership topics, sharing perspectives, and fostering collective reflection among participants.",
-    "image": "/ipoh.JPG"
+    "name": "PARALLEL PRESENTATION",
+    "description": "Presentations showcasing youth-led SDG activism projects",
+    "image": "/images/parallel_presentation.jpg"
   },
   {
     "id": 5,
-    "name": "WORKSHOP AND ROUNDTABLE DISCUSSION",
-    "description": "To introduce the conference's theme, set the tone (outlining the main message or theme) for the event, and inspire and engage the audience (sparking their interest and encouraging active participation in the conference activities).",
-    "image": "/groupPhoto.jpg"
+    "name": "INDUSTRIAL VISIT",
+    "description": "Sustainability-focused industrial visit aligned with SDGs",
+    "image": "/images/industrial_visit.jpg"
   },
   {
     "id": 6,
-    "name": "PAPER PRESENTATION",
-    "description": "Parallel presentations where delegates present their projects or event proposal.",
-    "image": "/groupPhoto.jpg"
+    "name": "MALAYSIA CULTURAL EXCHANGE",
+    "description": "Participants experience Malaysian arts through music, martial arts, and dance",
+    "image": "/images/cultural_exchange.jpg"
   },
   {
     "id": 7,
-    "name": "TED TALK",
-    "description": "A Talk by famous figure with the goals to spark interest and awareness in public in volunterism.",
-    "image": "/groupPhoto.jpg"
+    "name": "TED TALK SESSION: BELIEVING BEYOND LIMITS",
+    "description": "Inspiring journeys from personal passion to social impact",
+    "image": "/images/ted_talk.jpg"
   },
   {
     "id": 8,
-    "name": "GRANT PRESENTATION",
-    "description": "A special pitching session between selected delegates and NGOs or funding agency for sponsorship or securing grant.",
-    "image": "/groupPhoto.jpg"
+    "name": "EXHIBITION & NETWORKING SESSION",
+    "description": "Presentations showcasing youth-led SDG activism projects",
+    "image": "/images/exhibition_networking.jpg"
   },
   {
     "id": 9,
-    "name": "EXHIBITION AND NETWORKING SESSION",
-    "description": "Poster Exhibition by MPU4, DTE Projects and Booth Exhibition by NGOs and Collaborators.",
-    "image": "/groupPhoto.jpg"
+    "name": "MALAYSIAN CULTURAL ART WORKSHOP",
+    "description": "Hands-on workshop celebrating Malaysian cultural arts heritage",
+    "image": "/images/cultural_workshop.jpg"
+  },
+  {
+    "id": 10,
+    "name": "RECONSA 2026 CULTURAL GALA NIGHT",
+    "description": "Celebrating winners and different cultures at RECONSA closing ceremony",
+    "image": "/images/gala_night.jpg"
+  },
+  {
+    "id": 11,
+    "name": "USR ENGAGEMENT: RESTORE & NOURISH DAY",
+    "description": "RECONSA: Restore & Nourish Day is a youth-led CSR initiative combining environmental conservation and community service through mangrove planting, coastal cleanup, and community engagement activities in collaboration with local partners in Manjung, Perak.",
+    "image": "/images/usr_engagement.jpg"
+  },
+  {
+    "id": 12,
+    "name": "MALAYSIA DISCOVERY MODULE: KUALA LUMPUR TRIP",
+    "description": "Experience Malaysia's vibrant culture, traditional crafts, and historical heritage through an immersive Kuala Lumpur discovery tour.",
+    "image": "/images/kl_trip.jpg"
   }
 ]

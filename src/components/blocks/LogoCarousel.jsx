@@ -12,8 +12,6 @@ import data from "../json/companies.json";
 const logos = data;
 const repeatedLogos = [...logos, ...logos, ...logos];
 
-const chevronSize = 18;
-
 export default function LogoCarousel() {
   const carouselRef = React.useRef(null);
 
@@ -43,7 +41,7 @@ export default function LogoCarousel() {
         className="relative w-full px-12 sm:px-14 md:px-16 lg:px-20"
       >
         {/* Logos */}
-        <CarouselContent className="gap-2">
+        <CarouselContent className="gap-0.5">
           {repeatedLogos.map((logo, i) => (
             <CarouselItem
               key={i}
@@ -68,30 +66,6 @@ export default function LogoCarousel() {
             </CarouselItem>
           ))}
         </CarouselContent>
-
-        {/* Prev Button */}
-        <CarouselPrevious
-          aria-label="Previous"
-          className="absolute top-1/2 left-4 -translate-y-1/2 z-20
-          flex items-center justify-center
-          w-5 h-5 md:w-10 md:h-10 rounded-full
-          bg-[#db0025] text-white hover:bg-[#b2001e]
-          shadow-lg cursor-pointer"
-        >
-          <ChevronLeft size={chevronSize} />
-        </CarouselPrevious>
-
-        {/* Next Button */}
-        <CarouselNext
-          aria-label="Next"
-          className="absolute top-1/2 right-4 -translate-y-1/2 z-20
-          flex items-center justify-center
-          w-5 h-5 md:w-10 md:h-10 rounded-full
-          bg-[#db0025] text-white hover:bg-[#b2001e]
-          shadow-lg cursor-pointer"
-        >
-          <ChevronRight size={chevronSize} />
-        </CarouselNext>
       </Carousel>
     </div>
   );

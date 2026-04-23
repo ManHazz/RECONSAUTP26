@@ -24,15 +24,15 @@ const Banner = () => {
   const nextTitle = () => setIndex((prev) => (prev + 1) % titles.length);
 
   return (
-    <div className="absolute top-0 left-0 z-10 bg-[#db0025] w-full h-[15vh] flex items-center px-4 sm:px-8 md:px-15">
-      {/* Left Chevron - Fixed Width */}
+    <div className="absolute top-0 left-0 z-10 bg-[#461B61] w-full h-[15vh] flex items-center px-4 sm:px-8 md:px-15">
+      {/* Left Chevron - Fixed Width 
       <button
         onClick={prevTitle}
         className="p-2 hover:text-indigo-400 flex-shrink-0"
       >
         <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
       </button>
-
+*/}
       {/* Rotating Title - Takes remaining space */}
       <div className="flex-1 flex items-center justify-center px-2 sm:px-4">
         <AnimatePresence mode="wait">
@@ -49,13 +49,13 @@ const Banner = () => {
         </AnimatePresence>
       </div>
 
-      {/* Right Chevron - Fixed Width */}
+      {/* Right Chevron - Fixed Width 
       <button
         onClick={nextTitle}
         className="p-2 hover:text-indigo-400 flex-shrink-0"
       >
         <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />
-      </button>
+      </button>*/}
     </div>
   );
 };

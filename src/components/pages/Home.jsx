@@ -1,45 +1,91 @@
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, MapPin } from "lucide-react";
-import Dither from "../Dither";
 import CustomButton from "../blocks/CustomButton";
+import data from "../json/Home.json";
+
+// Array of background images for the sliding transition
+// Replace these paths with your actual image paths from your public folder
+const bgImages = [
+  "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2070&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=2012&auto=format&fit=crop",
+];
 
 export default function Hero() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Auto-advance the background image every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % bgImages.length);
+    }, 5000); // Change image every 5000ms (5 seconds)
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="relative flex flex-col items-center justify-center text-center px-6 h-screen bg-indigo-900 overflow-hidden">
-      {/* Dither Background */}
-      <div className="absolute inset-0 z-0 mix-blend-multiply">
-        <Dither
-          waveColor={[0.5, 0.5, 0.5]}
-          disableAnimation={false}
-          enableMouseInteraction={false}
-          mouseRadius={0.15}
-          colorNum={4}
-          waveAmplitude={0.3}
-          waveFrequency={3}
-          waveSpeed={0.05}
-        />
+    <section className="relative flex flex-col items-center justify-center text-center px-6 h-screen overflow-hidden bg-[#461B61]">
+      {/* LAYER 1: Deepest Background (The fading/sliding slideshow) */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <AnimatePresence mode="popLayout">
+          <motion.img
+            key={currentImageIndex}
+            src={bgImages[currentImageIndex]}
+            alt="Dynamic Background"
+            className="absolute inset-0 w-full h-full object-cover"
+            // Start slightly to the left and invisible
+            initial={{ opacity: 0, x: "-5%" }}
+            // Fade in and settle at center
+            animate={{ opacity: 1, x: "0%" }}
+            // Fade out and slide to the right
+            exit={{ opacity: 0, x: "5%" }}
+            // Smooth, slow transition for that premium feel
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          />
+        </AnimatePresence>
       </div>
 
-      {/* Hero Content */}
-      <div className="relative z-10">
-        <motion.h1
-          className="text-5xl md:text-7xl font-extrabold tracking-tight"
+      {/* LAYER 2: Middle Background (Static Overlay Image or Gradient) */}
+      {/* You can replace 'bg-black/60' with a static image if you want a textured overlay.
+        For example: className="absolute inset-0 z-0 bg-[url('/your-overlay-pattern.png')] bg-cover opacity-80"
+        I added a purple-to-black gradient fade here to blend your original theme with the photos.
+      */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#461B61]/60 to-[#050505]/80 pointer-events-none"></div>
+
+      {/* LAYER 3: Hero Content (Your existing text and buttons) */}
+      <div className="relative z-10 flex flex-col items-center">
+        {/* Logo Placement */}
+        <motion.img
+          src={data.logo}
+          alt="RECONSA Logo"
+          className="h-14 md:h-24 mb-6 object-contain"
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+        />
+
+        {/* Title */}
+        <motion.h1
+          className="text-3xl md:text-5xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight drop-shadow-lg"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
         >
-          RECONSA UTP 2026
+          {data.title}
         </motion.h1>
 
+        {/* Description */}
         <motion.p
-          className="mt-6 text-lg md:text-xl max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 40 }}
+          className="mt-6 text-lg md:text-xl max-w-2xl mx-auto text-white/90 drop-shadow-md"
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
         >
-          Cultivating Sustainable Volunteerism: The Evolution of Youth Activism
+          {data.desc}
         </motion.p>
 
+        {/* Buttons */}
         <div className="mt-8 flex flex-wrap gap-4 justify-center">
           <CustomButton variant="primary">Register Now</CustomButton>
           <CustomButton variant="secondary">
@@ -48,14 +94,14 @@ export default function Hero() {
         </div>
 
         {/* Event Info */}
-        <div className="mt-10 flex flex-wrap gap-6 justify-center text-sm text-indigo-200">
+        <div className="mt-10 flex flex-wrap gap-6 justify-center text-sm text-indigo-100 drop-shadow-md">
           <div className="flex items-center gap-2">
-            <Calendar className="w-5 h-5 text-indigo-400" />
-            <span>5 - 10 June 2026</span>
+            <Calendar className="w-5 h-5 text-indigo-300" />
+            <span>{data.date}</span>
           </div>
           <div className="flex items-center gap-2">
-            <MapPin className="w-5 h-5 text-pink-400" />
-            <span>Universiti Teknologi Petronas, Perak</span>
+            <MapPin className="w-5 h-5 text-pink-300" />
+            <span>{data.venue}</span>
           </div>
         </div>
       </div>

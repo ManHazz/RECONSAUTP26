@@ -1,62 +1,68 @@
 import { motion } from "framer-motion";
 import Banner from "../blocks/Banner";
+import data from "../json/abouts.json";
 
 export default function About() {
   return (
-    <section className="relative h-screen md:flex-row px-[6vw] pt-[20vh] bg-gradient-to-b from-indigo-900 to-indigo-800">
-      <Banner />
+    // Added overflow-hidden to prevent layout shifts causing scrollbars
+    <section className="relative w-full bg-white flex flex-col items-center pt-[10vh] overflow-hidden">
+      {/* Top Banner */}
+      <div className="w-full">
+        <Banner />
+      </div>
 
       {/* About Section Content */}
-      <div className="max-w-5xl flex flex-col md:flex-row md:items-start w-full mb-15">
+      {/* ADDED: relative z-10 bg-white to ensure text stacks on top of the image */}
+      <div className="relative z-10 w-full bg-white max-w-5xl px-[6vw] flex flex-col items-center mt-[8vh] pb-8">
+        {/* Title */}
         <motion.h2
-          className="text-3xl md:text-4xl font-bold mb-4 md:mb-0 md:w-[280px] md:flex-shrink-0"
+          className="text-3xl md:text-4xl font-bold italic text-gray-900 mb-6 text-center"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          About <br />
-          RECONSA
+          About
         </motion.h2>
-        {/* Description: below title on mobile, right on desktop */}
+
+        {/* Logo */}
+        <motion.img
+          src={data.logo}
+          alt="RECONSA Logo"
+          className="w-full max-w-[50%] md:max-w-xs object-contain mb-8"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          viewport={{ once: true }}
+        />
+
+        {/* Description */}
         <motion.p
-          className="text-indigo-200 text-left text-base md:text-xl leading-relaxed mt-2 md:mt-0 md:ml-8"
+          className="text-gray-900 font-bold italic text-center text-sm md:text-lg leading-relaxed max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Is a conference attended by young leaders, referred to as Delegates to
-          share perspective by showcasing ideas and past activism projects with
-          a parallel goal to achieve sustainable volunteerism. It is also a
-          platform where passionate youth gather in one place with a similar
-          aim, that is to equip essential skills, facilitate networking and
-          pursue grant opportunities.
+          {data.description}
         </motion.p>
       </div>
-      {/* Themes */}
-      <div className="max-w-5xl flex flex-col md:flex-row md:items-start w-full">
-        <motion.h2
-          className="text-3xl md:text-4xl font-bold mb-4 md:mb-0 md:w-[280px] md:flex-shrink-0"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          Our <br />
-          THEMES
-        </motion.h2>
-        {/* Description: below title on mobile, right on desktop */}
-        <motion.p
-          className="text-indigo-200 text-left text-base md:text-xl leading-relaxed mt-2 md:mt-0 md:ml-8"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          Cultivating Sustainable Volunteerism: The Evolution of Youth Activism
-        </motion.p>
-      </div>
+
+      {/* Full Width Group Photo */}
+      <motion.div
+        className="w-full mt-[-15vh] z-0"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.3 }}
+        viewport={{ once: true }}
+      >
+        <img
+          src={data.image}
+          alt="RECONSA Delegates"
+          // object-top ensures the focus stays on faces when cropped
+          className="w-full h-auto min-h-[50vh] object-cover object-top"
+        />
+      </motion.div>
     </section>
   );
 }

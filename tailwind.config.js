@@ -13,6 +13,9 @@ export default {
       animation: {
         shine: "shine 5s linear infinite",
       },
+      fontFamily: {
+        sans: ["Aptos", "Aptos Display", "sans-serif"],
+      },
     },
   },
   plugins: [],

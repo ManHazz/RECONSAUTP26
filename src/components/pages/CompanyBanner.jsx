@@ -2,8 +2,8 @@ import LogoCarousel from "../blocks/LogoCarousel";
 
 const CompanyBanner = ({ title }) => {
   return (
-    <section className=" w-full pb-[15vh]">
-      <h1 className="flex justify-center items-center pt-[5vh] pb-[10vh] font-Poppins font-bold text-white text-4xl text-center">
+    <section className=" w-full pb-[5vh]">
+      <h1 className="flex justify-center items-center pt-[5vh] pb-[5vh] font-Poppins font-bold text-white text-4xl text-center">
         {title}
       </h1>
       <LogoCarousel />

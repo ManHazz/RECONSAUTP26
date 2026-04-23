@@ -3,12 +3,23 @@ import Footer from "../blocks/footer";
 import Navbar from "../blocks/header";
 import data from "../json/agenda.json";
 
+const bg = "/bg/batik.png";
+
 const AgendaPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-950 via-indigo-900 to-indigo-800">
-      <Navbar onScrollTo={() => {}} /> {/* Navbar still required */}
-      <Agenda data={data} />
-      <Footer />
+    <div
+      className="relative min-h-screen overflow-hidden"
+      style={{ backgroundImage: `url(${bg})` }}
+    >
+      <div className="relative z-10 flex flex-col min-h-screen">
+        <Navbar onScrollTo={() => {}} />
+
+        <main className="flex-grow">
+          <Agenda data={data} />
+        </main>
+
+        <Footer />
+      </div>
     </div>
   );
 };

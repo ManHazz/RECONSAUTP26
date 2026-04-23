@@ -1,35 +1,306 @@
 {
   "Day 1": [
     {
-      "time": "09:00 AM",
-      "label": { "color": "bg-blue-500", "title": "Opening" },
-      "title": "Opening Ceremony",
-      "location": "Main Hall",
-      "description": "Kickoff with keynote and welcome remarks.",
-      "speaker": {
-        "name": "Dr. Aiman",
-        "photo": "/ChancellorHall.png"
-      }
+      "time": "9:00 AM - 11:30 AM",
+      "label": { "color": "bg-blue-500", "title": "Ceremony" },
+      "title": "Opening Ceremony and Keynote Speech",
+      "location": "TBD",
+      "description": ""
     },
     {
-      "time": "11:00 AM",
-      "label": { "color": "bg-green-500", "title": "Speech" },
-      "title": "Tech Talk",
-      "location": "Room 101",
-      "description": "Discussion on AI in Healthcare.",
-      "speaker": {
-        "name": "Prof. Sarah",
-        "photo": "/speakers/sarah.jpg"
-      }
+      "time": "11:30 AM - 3:00 PM",
+      "label": { "color": "bg-gray-400", "title": "Break" },
+      "title": "Lunch and Prayer",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "3:00 PM - 5:00 PM",
+      "label": { "color": "bg-purple-500", "title": "Seminar" },
+      "title": "Pitching Seminar and Roundtable Discussion",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "5:00 PM - 5:30 PM",
+      "label": { "color": "bg-gray-400", "title": "Break" },
+      "title": "Rest and Easy",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "5:30 PM - 7:00 PM",
+      "label": { "color": "bg-green-500", "title": "Activity" },
+      "title": "Outdoor Recreation",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "7:00 PM",
+      "label": { "color": "bg-gray-400", "title": "Break" },
+      "title": "Rest and Easy",
+      "location": "TBD",
+      "description": ""
     }
   ],
   "Day 2": [
     {
-      "time": "10:00 AM",
+      "time": "7:30 AM - 8:00 AM",
+      "label": { "color": "bg-indigo-500", "title": "Info" },
+      "title": "Registration",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "8:00 AM - 9:00 AM",
+      "label": { "color": "bg-gray-400", "title": "Break" },
+      "title": "Arrival of Participants and Breakfast",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "9:00 AM - 9:15 AM",
+      "label": { "color": "bg-orange-500", "title": "Briefing" },
+      "title": "Parallel Presentation Briefing",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "9:15 AM - 10:00 AM",
+      "label": { "color": "bg-purple-500", "title": "Session" },
+      "title": "Parallel Talk Session",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "10:00 AM - 11:30 AM",
+      "label": { "color": "bg-purple-500", "title": "Presentation" },
+      "title": "Paper Presentation",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "11:30 AM - 11:45 AM",
+      "label": { "color": "bg-blue-500", "title": "Ceremony" },
+      "title": "Judges Acknowledgement",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "11:45 AM - 12:00 PM",
+      "label": { "color": "bg-gray-400", "title": "Break" },
+      "title": "Rest and Easy",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "12:00 PM - 12:45 PM",
+      "label": { "color": "bg-purple-500", "title": "Forum" },
+      "title": "Sustainable Forum Session",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "12:45 PM - 2:00 PM",
+      "label": { "color": "bg-gray-400", "title": "Break" },
+      "title": "Rest and Easy",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "2:00 PM - 5:00 PM",
+      "label": { "color": "bg-green-500", "title": "Activity" },
+      "title": "Industrial Visit Experience",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "5:00 PM - 8:15 PM",
+      "label": { "color": "bg-gray-400", "title": "Break" },
+      "title": "Rest and Easy",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "8:15 PM - 10:30 PM",
+      "label": { "color": "bg-pink-500", "title": "Event" },
+      "title": "Malaysian Cultural Exchange",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "10:30 PM",
+      "label": { "color": "bg-gray-400", "title": "Break" },
+      "title": "Rest and Easy",
+      "location": "TBD",
+      "description": ""
+    }
+  ],
+  "Day 3": [
+    {
+      "time": "7:30 AM - 8:00 AM",
+      "label": { "color": "bg-indigo-500", "title": "Info" },
+      "title": "Registration",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "8:00 AM - 9:00 AM",
+      "label": { "color": "bg-gray-400", "title": "Break" },
+      "title": "Arrival of Participants and Breakfast",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "9:00 AM - 9:30 AM",
+      "label": { "color": "bg-blue-500", "title": "Ceremony" },
+      "title": "Opening Ceremony",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "9:30 AM - 9:45 AM",
+      "label": { "color": "bg-pink-500", "title": "Event" },
+      "title": "Welcoming Performance",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "9:45 AM - 10:30 AM",
+      "label": { "color": "bg-purple-500", "title": "Forum" },
+      "title": "Youth Forum Session",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "10:30 AM - 10:40 AM",
+      "label": { "color": "bg-gray-400", "title": "Break" },
+      "title": "Performance Break",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "10:40 AM - 11:10 AM",
+      "label": { "color": "bg-purple-500", "title": "Talk" },
+      "title": "TED Talk Session 1.0",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "11:10 AM - 11:20 AM",
+      "label": { "color": "bg-gray-400", "title": "Break" },
+      "title": "Performance Break",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "11:20 AM - 11:50 AM",
+      "label": { "color": "bg-purple-500", "title": "Talk" },
+      "title": "TED Talk Session 2.0",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "12:00 PM - 1:00 PM",
+      "label": { "color": "bg-teal-500", "title": "Networking" },
+      "title": "Exhibition and Networking Session",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "1:00 PM - 2:00 PM",
+      "label": { "color": "bg-gray-400", "title": "Break" },
+      "title": "Rest and Easy",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "2:00 PM - 4:30 PM",
       "label": { "color": "bg-red-500", "title": "Workshop" },
-      "title": "React Basics",
-      "location": "Lab A",
-      "description": "Hands-on React session for beginners."
+      "title": "Lantern Art Making Workshop",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "4:30 PM - 6:30 PM",
+      "label": { "color": "bg-red-500", "title": "Workshop" },
+      "title": "Henna Art Class",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "6:30 PM - 8:00 PM",
+      "label": { "color": "bg-gray-400", "title": "Break" },
+      "title": "Rest and Easy",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "8:00 PM - 10:30 PM",
+      "label": { "color": "bg-pink-500", "title": "Event" },
+      "title": "RECONSA 2026 Cultural Gala Night",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "10:30 PM",
+      "label": { "color": "bg-gray-400", "title": "Break" },
+      "title": "Rest and Easy",
+      "location": "TBD",
+      "description": ""
+    }
+  ],
+  "Day 4": [
+    {
+      "time": "6:30 AM - 8:00 AM",
+      "label": { "color": "bg-yellow-500", "title": "Transport" },
+      "title": "Bus Departure",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "8:00 AM - 8:30 PM",
+      "label": { "color": "bg-green-500", "title": "Activity" },
+      "title": "Community Service Day",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "8:30 PM - 10:00 PM",
+      "label": { "color": "bg-yellow-500", "title": "Transport" },
+      "title": "Bus Departure",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "10:00 PM",
+      "label": { "color": "bg-gray-400", "title": "Break" },
+      "title": "Rest and Easy",
+      "location": "TBD",
+      "description": ""
+    }
+  ],
+  "Day 5": [
+    {
+      "time": "5:30 AM - 9:30 AM",
+      "label": { "color": "bg-yellow-500", "title": "Transport" },
+      "title": "Bus Departure",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "9:30 AM - 4:30 PM",
+      "label": { "color": "bg-green-500", "title": "Activity" },
+      "title": "Malaysia Discovery Module",
+      "location": "TBD",
+      "description": ""
+    },
+    {
+      "time": "4:30 PM - 7:00 PM",
+      "label": { "color": "bg-yellow-500", "title": "Transport" },
+      "title": "Airport Assistance to KLIA 1/KLIA 2",
+      "location": "TBD",
+      "description": ""
     }
   ]
 }

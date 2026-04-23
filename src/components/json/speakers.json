@@ -1,20 +1,51 @@
 [
   {
-    "name": "YB Syed Saddiq",
-    "role": "Iron Man Finisher",
-    "img": "/speakers/speaker_example.jpg",
-    "bio": "John has been leading climate initiatives for over 10 years...",
-    "expertise": ["Sustainability", "Policy", "Community Organizing"]
+    "id": 1,
+    "name": "The Honourable Dato' Seri Anwar Ibrahim",
+    "role": "Prime Minister",
+    "organization": "Malaysia",
+    "image": "/images/speakers/anwar.jpg"
   },
-  { "name": "Markus Lee", "role": "Tech Visionary", "img": "/markus.jpg" },
-  { "name": "Sophia Grant", "role": "AI Innovator", "img": "/sophia.jpg" },
-  { "name": "Liam Wong", "role": "Creative Futurist", "img": "/liam.jpg" },
   {
-    "name": "Aisha Rahman",
-    "role": "Cybersecurity Expert",
-    "img": "/aisha.jpg"
+    "id": 2,
+    "name": "Graham Henley",
+    "role": "CEO",
+    "organization": "International Association of Oil & Gas Producers (IOGP)",
+    "image": "/images/speakers/graham.jpg"
   },
-  { "name": "Carlos Vega", "role": "Data Scientist", "img": "/carlos.jpg" },
-  { "name": "Maya Chen", "role": "Cloud Specialist", "img": "/maya.jpg" },
-  { "name": "David Noor", "role": "Blockchain Pioneer", "img": "/david.jpg" }
+  {
+    "id": 3,
+    "name": "H.E. Senator Datuk Seri Amir Hamzah Azizan",
+    "role": "Minister of Finance II",
+    "organization": "Ministry of Finance (MoF)",
+    "image": "/images/speakers/amir.jpg"
+  },
+  {
+    "id": 4,
+    "name": "H.E. Liew Chin Tong",
+    "role": "Deputy Minister of Investment, Trade and Industry",
+    "organization": "Malaysia",
+    "image": "/images/speakers/liew.jpg"
+  },
+  {
+    "id": 5,
+    "name": "H.E. Haitham Al Ghais",
+    "role": "Secretary General",
+    "organization": "OPEC",
+    "image": "/images/speakers/haitham.jpg"
+  },
+  {
+    "id": 6,
+    "name": "H.E. Low Yen Ling",
+    "role": "Senior Minister of State for Ministry of Trade & Industry and Ministry of Culture, Community and Youth",
+    "organization": "Republic of Singapore",
+    "image": "/images/speakers/low.jpg"
+  },
+  {
+    "id": 7,
+    "name": "H.E. Dato' Sri Haji Fadillah Haji Yusof",
+    "role": "Deputy Prime Minister Malaysia\nMinister\nMinistry of Energy Transition and Water Transformation (PETRA)",
+    "organization": "",
+    "image": "/images/speakers/fadillah.jpg"
+  }
 ]

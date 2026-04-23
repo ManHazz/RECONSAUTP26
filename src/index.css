@@ -135,6 +135,23 @@ body {
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+.mask-image-fade {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

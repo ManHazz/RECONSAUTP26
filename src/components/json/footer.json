@@ -1,6 +1,6 @@
 {
   "footer_details": {
-    "logo": "/images/futuretech-logo.png",
+    "logo": "/logo/LogoRECONSAwhite.png",
     "logo_alt": "Reconsa Logo",
     "logo_link": "/",
     "title": "RECONSA UTP 2026",
@@ -41,7 +41,7 @@
     },
     "copyright": {
       "statement": "© RECONSAUTP All rights reserved.",
-      "year": "2025"
+      "year": "2026"
     },
     "policies": [
       { "label": "Terms of Service", "href": "#terms" },

@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "sdgNumber": "7",
+    "sdgImage": "/sdg/SDG7Banner.png",
+    "title": "Affordable and Clean Energy",
+    "description": "Drives awareness, policy change, and community action to promote sustainable, affordable clean energy access."
+  },
+  {
+    "id": 2,
+    "sdgNumber": "11",
+    "sdgImage": "/sdg/SDG11Banner.png",
+    "title": "Sustainable Cities and Communities",
+    "description": "Empowers communities, promotes inclusive planning, and drives sustainable urban development."
+  },
+  {
+    "id": 3,
+    "sdgNumber": "13",
+    "sdgImage": "/sdg/SDG13Banner.png",
+    "title": "Climate Action",
+    "description": "Inspires communities, promotes climate-conscious policies, and drives practical solutions against climate change."
+  }
+]

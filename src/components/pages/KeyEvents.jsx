@@ -44,9 +44,14 @@ const KeyEvents = () => {
         onUpdate: (self) => {
           const p = self.progress;
           const panels = p * (total - 1);
-          const y = -panels * window.innerHeight;
+
+          // Dynamically read the height to ensure perfect scrolling math across all screen sizes
+          const panelHeight =
+            textContainer.children[0]?.offsetHeight || window.innerHeight;
+          const y = -panels * panelHeight;
+
           gsap.set(textContainer, { y });
-          // Only update progress bar height on desktop
+
           if (window.innerWidth >= 768) {
             gsap.set(progressBar, { height: `${p * 100}%` });
           }
@@ -72,23 +77,25 @@ const KeyEvents = () => {
       <div
         ref={containerRef}
         className="relative text-white"
-        style={{ minHeight: `${sections.length * 100}vh` }}
+        // Determines the scroll speed/duration
+        style={{ minHeight: `${sections.length * 80}vh` }}
       >
         {/* Title Row */}
-        <div className="w-full flex justify-center pt-20 pb-15 md:pb-0">
+        <div className="w-full flex justify-center pt-10 md:pt-20 pb-10 md:pb-0">
           <ShinyText
             text="KEY EVENTS"
             disabled={false}
             speed={2.5}
-            className="font-Poppins font-extrabold tracking-tight text-4xl sm:text-5xl md:text-7xl leading-tight text-center "
+            className="font-Poppins font-extrabold tracking-tight text-4xl sm:text-5xl md:text-7xl leading-tight text-center"
           />
         </div>
 
         {/* Main Content Row */}
-        <div className="sticky top-0 h-screen flex flex-col md:flex-row items-stretch">
-          {/* Progress Bar: Only show on desktop */}
-          <div className="hidden md:flex md:w-16 md:items-center md:justify-center px-6 md:px-0 mb-4 md:mb-0">
-            <div className="relative mx-auto md:mx-0 w-1 h-32 md:h-3/5 bg-white/15 rounded-full overflow-hidden">
+        {/* UPDATED: Centers items vertically on mobile, but keeps the top padding layout for desktop */}
+        <div className="sticky top-0 h-[100dvh] overflow-hidden flex flex-col md:flex-row items-center md:items-start md:pt-[12vh]">
+          {/* Progress Bar: Desktop Only */}
+          <div className="hidden md:flex md:w-16 md:items-center md:justify-center px-6 md:px-0 mb-4 md:mb-0 h-[75vh]">
+            <div className="relative mx-auto md:mx-0 w-1 h-3/5 bg-white/15 rounded-full overflow-hidden">
               <div
                 ref={progressBarRef}
                 className="w-full bg-gradient-to-t from-[#787CFE] via-[#4854CE] to-[#172D9D] rounded-full origin-bottom"
@@ -100,17 +107,18 @@ const KeyEvents = () => {
           {/* Sliding Text + Image Panels */}
           <div
             ref={textContainerRef}
-            className="relative will-change-transform flex-1"
-            style={{ height: `${sections.length * 100}vh` }}
+            className="relative will-change-transform flex-1 w-full"
           >
             {sections.map((section) => (
               <div
                 key={section.id}
-                className="min-h-[80vh] md:h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-24 gap-6 md:gap-20"
+                // UPDATED: Reduced mobile height to h-[60vh] to shrink the gap drastically.
+                className="h-[60vh] md:h-[75vh] w-full flex flex-col md:flex-row items-center justify-center px-6 md:px-24 gap-4 md:gap-16"
               >
-                {/* Image: right side on desktop, top on mobile */}
-                <div className="w-full md:w-[40vw] flex items-center justify-center mb-6 md:mb-0 md:order-2">
-                  <div className="w-[80vw] h-auto max-w-xs md:w-[32vw] md:h-[48vh] md:max-w-[500px] md:max-h-[400px] flex items-center justify-center">
+                {/* Image */}
+                {/* UPDATED: Scaled the image down slightly on mobile so it fits the tighter 60vh layout nicely */}
+                <div className="w-full md:w-[40vw] flex items-center justify-center mb-4 md:mb-0 md:order-2">
+                  <div className="w-[65vw] max-w-[280px] h-auto md:w-[32vw] md:h-[48vh] md:max-w-[500px] md:max-h-[400px] flex items-center justify-center">
                     <img
                       src={section.image}
                       alt={section.title}
@@ -119,12 +127,13 @@ const KeyEvents = () => {
                   </div>
                 </div>
 
-                {/* Text: left side on desktop, below image on mobile */}
-                <div className="max-w-xl space-y-4 flex-1 text-center md:text-left md:flex md:flex-col md:justify-center md:items-start">
-                  <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-2 md:mb-4">
+                {/* Text */}
+                {/* UPDATED: Reduced space-y on mobile so the text is more compact */}
+                <div className="max-w-xl space-y-2 md:space-y-4 flex-1 text-center md:text-left flex flex-col justify-center items-center md:items-start">
+                  <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-1 md:mb-4">
                     {section.title}
                   </h2>
-                  <p className="text-base sm:text-lg md:text-lg lg:text-xl text-center md:text-left leading-relaxed text-white/80 md:max-w-md">
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-white/80 md:max-w-md">
                     {section.description}
                   </p>
                 </div>
