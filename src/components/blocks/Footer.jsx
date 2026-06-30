@@ -1,5 +1,5 @@
 import React from "react";
-import data from "../json/footer.json";
+import data from "@/data/footer.json";
 
 const Footer = () => {
   const details = data.footer_details;
@@ -7,7 +7,8 @@ const Footer = () => {
 
   return (
     <footer
-      className={`w-full`}
+      id="contact"
+      className={`w-full scroll-mt-20`}
       style={{ backgroundColor: colors.background, color: colors.text }}
     >
       <div className="flex flex-col items-center justify-center max-h-fit xl:max-w-full w-full pt-8">

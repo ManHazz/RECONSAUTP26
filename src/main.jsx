@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
 import App from "./App.jsx";
-import EventsPage from "./components/pages/EventsPage.jsx";
-import AgendaPage from "./components/pages/AgendaPage.jsx";
-import PastEdPage from "./components/pages/PastEdPage.jsx";
+import EventsPage from "@/pages/EventsPage.jsx";
+import AgendaPage from "@/pages/AgendaPage.jsx";
+import PastEdPage from "@/pages/PastEdPage.jsx";
 import ScrollToTop from "./components/blocks/ScrollToTop.jsx";
 
 const root = document.getElementById("root");

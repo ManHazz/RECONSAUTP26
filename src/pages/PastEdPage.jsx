@@ -1,17 +1,27 @@
-import Footer from "../blocks/footer";
-import Navbar from "../blocks/header";
-import DomeGallery from "../DomeGallery";
+import Footer from "@/components/blocks/Footer";
+import Navbar from "@/components/blocks/Header";
+import DomeGallery from "@/components/DomeGallery";
 import { motion } from "framer-motion";
 
 const bg = "/bg/batik.png";
 
 const PastEdPage = () => {
   return (
-    <div className="min-h-screen bg-[#060010]">
+    <div className="min-h-screen bg-[#060010] overflow-x-hidden">
       <Navbar />
 
-      {/* Hero Dome Section */}
-      <div className="relative flex flex-col items-center justify-center text-center h-screen">
+      {/* Hero Dome Section — clip-path forces the 3D-transformed dome tiles
+          to actually clip at the section bounds (overflow:hidden alone leaks
+          on transformed children in some browsers). */}
+      <div
+        className="relative flex flex-col items-center justify-center text-center h-screen overflow-hidden isolate"
+        style={{ clipPath: "inset(0)" }}
+      >
+        {/* Bottom fade so the dome blends into the next section instead of cutting hard */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-48 z-[15] bg-gradient-to-b from-transparent via-[#060010]/80 to-[#060010]"
+        />
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
           <img
@@ -46,7 +56,7 @@ const PastEdPage = () => {
         </div>
       </div>
 
-      <div className="bg-[#060010] w-full h-screen flex items-center justify-center">
+      <div className="bg-[#060010] w-full h-screen flex items-center justify-center z-11">
         <video
           src="/videos/Reconsa 25 Montage Final.mp4"
           controls

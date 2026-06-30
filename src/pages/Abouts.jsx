@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
-import Banner from "../blocks/Banner";
-import data from "../json/abouts.json";
+import Banner from "@/components/blocks/Banner";
+import data from "@/data/abouts.json";
 
 export default function About() {
   return (
-    // Added overflow-hidden to prevent layout shifts causing scrollbars
     <section className="relative w-full bg-white flex flex-col items-center pt-[10vh] overflow-hidden">
       {/* Top Banner */}
       <div className="w-full">
@@ -12,7 +11,6 @@ export default function About() {
       </div>
 
       {/* About Section Content */}
-      {/* ADDED: relative z-10 bg-white to ensure text stacks on top of the image */}
       <div className="relative z-10 w-full bg-white max-w-5xl px-[6vw] flex flex-col items-center mt-[8vh] pb-8">
         {/* Title */}
         <motion.h2

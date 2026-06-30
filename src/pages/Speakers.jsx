@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import speakersData from "../json/speakers.json";
+import speakersData from "@/data/speakers.json";
 
 export default function Speakers() {
   const scrollRef = useRef(null);
@@ -50,30 +50,36 @@ export default function Speakers() {
                 // regardless of padding or margins. (50% minus half the 16px gap)
                 className="flex-none w-[calc(50%-8px)] sm:w-[45vw] md:w-[30vw] lg:w-[calc(20%-1.2rem)] snap-start flex flex-col"
               >
-                {/* Speaker Image */}
-                <div className="w-full aspect-[4/5] bg-white mb-3 md:mb-4 relative overflow-hidden flex items-end justify-center">
-                  <img
-                    src={speaker.image}
-                    alt={speaker.name}
-                    className="w-full h-full object-cover object-top"
-                    onError={(e) => {
-                      e.target.style.display = "none";
-                      e.target.nextSibling.style.display = "flex";
-                    }}
-                  />
-                  <div className="hidden absolute inset-0 bg-gray-200 items-center justify-center text-gray-400 text-xs">
-                    No Image
-                  </div>
+                {/* Speaker Image (or placeholder) */}
+                <div className="w-full aspect-[4/5] bg-gray-200 mb-3 md:mb-4 relative overflow-hidden">
+                  {speaker.image ? (
+                    <img
+                      src={speaker.image}
+                      alt={speaker.name}
+                      className="w-full h-full object-cover object-top"
+                      onError={(e) => {
+                        e.currentTarget.style.display = "none";
+                      }}
+                    />
+                  ) : null}
                 </div>
 
                 {/* Speaker Details */}
-                <div className="flex flex-col flex-grow pr-2">
-                  <h3 className="text-sm md:text-[1.1rem] leading-tight font-bold text-[#1a3673] mb-1">
-                    {speaker.name}
-                  </h3>
-                  <p className="text-xs md:text-[0.9rem] leading-snug text-gray-800 mb-1 whitespace-pre-wrap">
-                    {speaker.role}
-                  </p>
+                <div className="flex flex-col flex-grow pr-2 gap-1">
+                  {speaker.name ? (
+                    <h3 className="text-sm md:text-[1.1rem] leading-tight font-bold text-[#1a3673]">
+                      {speaker.name}
+                    </h3>
+                  ) : (
+                    <span className="block h-4 w-3/4 rounded bg-gray-200" aria-hidden />
+                  )}
+                  {speaker.role ? (
+                    <p className="text-xs md:text-[0.9rem] leading-snug text-gray-800 whitespace-pre-wrap">
+                      {speaker.role}
+                    </p>
+                  ) : (
+                    <span className="block h-3 w-1/2 rounded bg-gray-200" aria-hidden />
+                  )}
                   {speaker.organization && (
                     <p className="text-xs md:text-[0.9rem] font-bold text-black leading-snug">
                       {speaker.organization}

@@ -1,28 +1,45 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, MapPin } from "lucide-react";
-import CustomButton from "../blocks/CustomButton";
-import data from "../json/Home.json";
+import CustomButton from "@/components/blocks/CustomButton";
+import data from "@/data/Home.json";
 
-// Array of background images for the sliding transition
-// Replace these paths with your actual image paths from your public folder
+// Hero background slideshow — high-res RECONSA event photos
 const bgImages = [
-  "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=2012&auto=format&fit=crop",
+  "/images/gala_night.jpg",
+  "/images/exhibition_networking.jpg",
+  "/images/pitching_seminar.jpg",
+  "/images/cultural_exchange.jpg",
+  "/images/usr_engagement.jpg",
+  "/images/parallel_talk.jpg",
+  "/images/cultural_workshop.jpg",
+  "/images/kl_trip.jpg",
+  "/images/roundtable.jpg",
+  "/images/parallel_presentation.jpg",
 ];
 
+// Fisher–Yates shuffle — randomizes the slideshow order on each visit
+const shuffle = (arr) => {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+};
+
 export default function Hero() {
+  const slides = useMemo(() => shuffle(bgImages), []);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Auto-advance the background image every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % bgImages.length);
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % slides.length);
     }, 5000); // Change image every 5000ms (5 seconds)
 
     return () => clearInterval(interval);
-  }, []);
+  }, [slides.length]);
 
   return (
     <section className="relative flex flex-col items-center justify-center text-center px-6 h-screen overflow-hidden bg-[#461B61]">
@@ -31,7 +48,7 @@ export default function Hero() {
         <AnimatePresence mode="popLayout">
           <motion.img
             key={currentImageIndex}
-            src={bgImages[currentImageIndex]}
+            src={slides[currentImageIndex]}
             alt="Dynamic Background"
             className="absolute inset-0 w-full h-full object-cover"
             // Start slightly to the left and invisible

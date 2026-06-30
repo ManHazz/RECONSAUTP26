@@ -1,15 +1,15 @@
 import { useRef, useEffect } from "react";
 import { useLocation } from "react-router";
-import Navbar from "./components/blocks/header";
-import Venues from "./components/pages/venues";
-import Speakers from "./components/pages/Speakers";
-import Booklet from "./components/pages/Booklet";
-import Footer from "./components/blocks/footer";
-import Home from "./components/pages/Home";
-import About from "./components/pages/Abouts";
-import CompanyBanner from "./components/pages/CompanyBanner";
+import Navbar from "./components/blocks/Header";
+import Venues from "@/pages/Venues";
+import Speakers from "@/pages/Speakers";
+import Booklet from "@/pages/Booklet";
+import Footer from "./components/blocks/Footer";
+import Home from "@/pages/Home";
+import About from "@/pages/Abouts";
+import CompanyBanner from "@/pages/CompanyBanner";
 import "./index.css";
-import SubThemes from "./components/pages/SubTheme";
+import SubThemes from "@/pages/SubTheme";
 
 const App = () => {
   const homeRef = useRef(null);

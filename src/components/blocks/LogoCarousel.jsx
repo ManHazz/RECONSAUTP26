@@ -7,7 +7,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import data from "../json/companies.json";
+import data from "@/data/companies.json";
 
 const logos = data;
 const repeatedLogos = [...logos, ...logos, ...logos];
@@ -57,11 +57,15 @@ export default function LogoCarousel() {
         bg-white rounded-lg shadow text-black
       "
               >
-                <img
-                  src={logo.src}
-                  alt={logo.alt || `Company logo ${i + 1}`}
-                  className="max-w-[70%] max-h-[70%] object-contain"
-                />
+                {logo.src ? (
+                  <img
+                    src={logo.src}
+                    alt={logo.alt || `Company logo ${i + 1}`}
+                    className="max-w-[70%] max-h-[70%] object-contain"
+                  />
+                ) : (
+                  <span aria-hidden className="block w-3/5 h-3/5 rounded-md bg-gray-100" />
+                )}
               </div>
             </CarouselItem>
           ))}

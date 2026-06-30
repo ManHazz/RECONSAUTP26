@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import data_source from "../json/events.json";
-import ShinyText from "../ShinyText";
+import data_source from "@/data/events.json";
+import ShinyText from "@/components/ShinyText";
 
 gsap.registerPlugin(ScrollTrigger);
 

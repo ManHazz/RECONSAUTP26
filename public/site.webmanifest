@@ -1,0 +1,16 @@
+{
+  "name": "RECONSA 2026 — Regional Conference on Sustainability and Activism",
+  "short_name": "RECONSA 2026",
+  "description": "Cultivating Sustainable Volunteerism: The Evolution of Youth Activism. 11–15 September 2026, Universiti Teknologi PETRONAS, Malaysia.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#461B61",
+  "theme_color": "#461B61",
+  "icons": [
+    {
+      "src": "/logo/LogoRECONSA.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

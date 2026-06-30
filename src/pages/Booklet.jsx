@@ -1,5 +1,5 @@
-import CompanyCarousel from "../blocks/LogoCarousel";
-import CustomButton from "../blocks/CustomButton";
+import CompanyCarousel from "@/components/blocks/LogoCarousel";
+import CustomButton from "@/components/blocks/CustomButton";
 
 export default function Booklet() {
   return (
@@ -19,7 +19,18 @@ export default function Booklet() {
             Join innovators, developers, and leaders shaping tomorrow’s
             technology landscape.
           </p>
-          <CustomButton variant="primary">Download Info Pack</CustomButton>
+          <CustomButton
+            variant="primary"
+            onClick={() =>
+              window.open(
+                "https://bit.ly/REC26_Programme_Info",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
+          >
+            Download Info Pack
+          </CustomButton>
         </div>
       </div>
     </section>

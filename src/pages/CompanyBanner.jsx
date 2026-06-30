@@ -1,4 +1,4 @@
-import LogoCarousel from "../blocks/LogoCarousel";
+import LogoCarousel from "@/components/blocks/LogoCarousel";
 
 const CompanyBanner = ({ title }) => {
   return (
