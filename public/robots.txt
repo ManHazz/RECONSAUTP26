@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://reconsautp.com/sitemap.xml
+Sitemap: https://reconsautp.vercel.app/sitemap.xml
