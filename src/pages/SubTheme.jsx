@@ -8,23 +8,23 @@ export default function SubThemes() {
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#9f44db] rounded-full filter blur-[150px] opacity-40 pointer-events-none" />
 
       {/* Main split layout container */}
-      <div className="relative z-10 w-full max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 items-start">
         {/* ==================== LEFT HALF: Theme Text ==================== */}
-        <div className="col-span-1 md:col-span-5 md:sticky md:top-[14vh] flex flex-col items-center md:items-start text-center md:text-left">
-          <h2 className="text-4xl md:text-6xl font-black italic uppercase text-white mb-6 tracking-tighter">
+        <div className="col-span-1 lg:col-span-5 lg:sticky lg:top-[14vh] flex flex-col items-center lg:items-start text-center lg:text-left">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black italic uppercase text-white mb-6 tracking-tighter">
             RECONSA26
             <br />
             <span className="text-[#E6B3FF]">Theme</span>
           </h2>
-          <p className="text-xl md:text-3xl font-bold text-white/90 leading-snug max-w-lg">
+          <p className="text-xl md:text-2xl lg:text-3xl font-bold text-white/90 leading-snug max-w-lg">
             Cultivating Sustainable Volunteerism: The Evolution of Youth
             Activism
           </p>
         </div>
 
         {/* ==================== RIGHT HALF: Sub Themes ==================== */}
-        <div className="col-span-1 md:col-span-7 flex flex-col items-end w-full">
-          <h3 className="text-2xl md:text-4xl font-black italic uppercase text-white mb-8 text-right w-full">
+        <div className="col-span-1 lg:col-span-7 flex flex-col items-center lg:items-end w-full">
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-black italic uppercase text-white mb-6 md:mb-8 text-center lg:text-right w-full">
             Sub Themes
           </h3>
 

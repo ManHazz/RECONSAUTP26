@@ -12,9 +12,9 @@ const Footer = () => {
       style={{ backgroundColor: colors.background, color: colors.text }}
     >
       <div className="flex flex-col items-center justify-center max-h-fit xl:max-w-full w-full pt-8">
-        <div className="flex gap-10 px-3 xl:gap-28 lg:gap-12 flex-col md:flex-row md:gap-5 justify-center mt-8 md:mt-14 xl:px-0 md:px-7 max-w-xl md:max-w-7xl">
+        <div className="flex gap-8 px-3 xl:gap-28 lg:gap-12 flex-col sm:flex-row sm:flex-wrap sm:gap-8 sm:justify-center md:gap-5 justify-center mt-8 md:mt-14 xl:px-0 md:px-7 max-w-xl sm:max-w-3xl md:max-w-7xl">
           {/* Logo & Description Section */}
-          <div className="flex flex-col gap-4 lg:gap-6 md:gap-4 items-center md:items-start text-center md:text-left">
+          <div className="flex flex-col gap-4 lg:gap-6 md:gap-4 items-center sm:items-start text-center sm:text-left">
             {(data.logo || details.logo) && (
               <img
                 src={data.logo || details.logo}
@@ -37,7 +37,7 @@ const Footer = () => {
             </div>
 
             {/* UPDATED: Added justify-center md:justify-start for the social icons */}
-            <div className="flex gap-4 max-w-[200px] justify-center md:justify-start w-full">
+            <div className="flex gap-4 max-w-[200px] justify-center sm:justify-start w-full">
               {details.socials.map((item, index) => (
                 <a
                   key={index}
@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
 
           {/* Links Section */}
-          <div className="flex flex-col md:gap-4 gap-2 items-center md:items-start text-center md:text-left">
+          <div className="flex flex-col md:gap-4 gap-2 items-center sm:items-start text-center sm:text-left">
             <h3
               className="text-lg md:text-xl font-semibold"
               style={{ color: colors.highlight }}
@@ -78,7 +78,7 @@ const Footer = () => {
           </div>
 
           {/* Additional Info / Services */}
-          <div className="flex flex-col md:gap-4 gap-2 items-center md:items-start text-center md:text-left">
+          <div className="flex flex-col md:gap-4 gap-2 items-center sm:items-start text-center sm:text-left">
             <h3
               className="text-lg md:text-xl font-semibold"
               style={{ color: colors.highlight }}
@@ -102,7 +102,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Section */}
-          <div className="flex flex-col md:gap-4 gap-2 items-center md:items-start text-center md:text-left">
+          <div className="flex flex-col md:gap-4 gap-2 items-center sm:items-start text-center sm:text-left">
             <h3
               className="text-lg md:text-xl font-semibold"
               style={{ color: colors.highlight }}

@@ -104,7 +104,18 @@ export default function Hero() {
 
         {/* Buttons */}
         <div className="mt-8 flex flex-wrap gap-4 justify-center">
-          <CustomButton variant="primary">Register Now</CustomButton>
+          <CustomButton
+            variant="primary"
+            onClick={() =>
+              window.open(
+                "https://bit.ly/REC26_Registration_Form",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
+          >
+            Register Now
+          </CustomButton>
           <CustomButton variant="secondary">
             <a href="/agenda">View Agenda</a>
           </CustomButton>
